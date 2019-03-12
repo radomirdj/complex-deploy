@@ -9,12 +9,12 @@ script:
 - docker run radomir/complex-test npm run test -- --coverage
 
 after_success:
-  - docker build -t radomir/complex-client ./client
-  - docker build -t radomir/complex-nginx ./nginx
-  - docker build -t radomir/complex-server ./server
-  - docker build -t radomir/complex-worker ./worker
+  - docker build -t raso354/complex-client ./client
+  - docker build -t raso354/complex-nginx ./nginx
+  - docker build -t raso354/complex-server ./server
+  - docker build -t raso354/complex-worker ./worker
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push radomir/complex-client
-  - docker push radomir/complex-nginx
-  - docker push radomir/complex-server
-  - docker push radomir/complex-worker
+  - docker push raso354/complex-client
+  - docker push raso354/complex-nginx
+  - docker push raso354/complex-server
+  - docker push raso354/complex-worker
