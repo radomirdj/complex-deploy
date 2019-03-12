@@ -18,3 +18,16 @@ after_success:
   - docker push raso354/complex-nginx
   - docker push raso354/complex-server
   - docker push raso354/complex-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "complex"
+  env: "Complex-env-1"
+  bucket_name: "elasticbeanstalk-eu-central-1-154909137467"
+  bucket_path: "complex"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
