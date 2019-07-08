@@ -1,0 +1,6 @@
+docker build -f Dockerfile.dev . ///in folder client
+gets image id
+docker run <id>
+docker run -p 8080:8080 <id>
+
+
